@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "commerce-app-init": {
+      "source": "adobe/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/commerce/app-management/skills/commerce-app-init/SKILL.md",
+      "computedHash": "b51b04e4db91b64a473b00ec9a82083ce7c52b36a0eb03e31f84f911dc68c65c"
+    },
+    "commerce-app-migrate": {
+      "source": "adobe/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/commerce/app-migration/skills/commerce-app-migrate/SKILL.md",
+      "computedHash": "e5a57b6ae82edc0cf2c8a04c93ef8dc7bf2f276ea04eed40e23a881381253254"
+    }
+  }
+}

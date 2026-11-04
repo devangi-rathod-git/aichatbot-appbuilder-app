@@ -1,0 +1,80 @@
+[
+  {
+    "default": "",
+    "description": "Base URL for your Adobe Commerce instance. For PaaS, include /rest/ suffix; for SaaS, use the Adobe Commerce Cloud REST endpoint.",
+    "label": "Adobe Commerce Base URL",
+    "name": "COMMERCE_BASE_URL",
+    "type": "text"
+  },
+  {
+    "default": "",
+    "description": "Required for self-hosted Adobe Commerce.",
+    "env": [
+      "paas"
+    ],
+    "label": "Adobe Commerce Access Token",
+    "name": "COMMERCE_ACCESS_TOKEN",
+    "type": "password"
+  },
+  {
+    "default": "",
+    "description": "Adobe IMS OAuth client ID for SaaS Commerce authentication.",
+    "env": [
+      "saas"
+    ],
+    "label": "IMS Client ID",
+    "name": "IMS_CLIENT_ID",
+    "type": "text"
+  },
+  {
+    "default": "",
+    "description": "Adobe IMS OAuth client secret for SaaS Commerce authentication.",
+    "env": [
+      "saas"
+    ],
+    "label": "IMS Client Secret",
+    "name": "IMS_CLIENT_SECRET",
+    "type": "password"
+  },
+  {
+    "default": "",
+    "description": "Adobe IMS organization ID for SaaS Commerce authentication.",
+    "env": [
+      "saas"
+    ],
+    "label": "IMS Organization ID",
+    "name": "IMS_ORG_ID",
+    "type": "text"
+  },
+  {
+    "default": "",
+    "description": "Optional Adobe IMS host for SaaS token requests. Defaults to https://ims-na1.adobelogin.com.",
+    "env": [
+      "saas"
+    ],
+    "label": "IMS Auth Host",
+    "name": "IMS_AUTH_HOST",
+    "type": "text"
+  },
+  {
+    "default": "",
+    "description": "API key used for OpenAI chat completions and embeddings.",
+    "label": "OpenAI API Key",
+    "name": "openaiKey",
+    "type": "password"
+  },
+  {
+    "default": "",
+    "description": "URL of your Qdrant vector database instance.",
+    "label": "Vector DB URL",
+    "name": "vectorDbUrl",
+    "type": "url"
+  },
+  {
+    "default": "",
+    "description": "API key for authenticating to your Qdrant vector database.",
+    "label": "Vector DB API Key",
+    "name": "vectorDbApiKey",
+    "type": "password"
+  }
+]

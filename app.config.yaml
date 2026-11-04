@@ -1,0 +1,104 @@
+application:
+  actions: actions
+  web: web-src
+  runtimeManifest:
+    packages:
+      AiChatbot:
+        license: Apache-2.0
+        actions:
+          aichatbot:
+            function: actions/aichatbot/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              COMMERCE_BASE_URL: $COMMERCE_BASE_URL
+              COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+              IMS_CLIENT_ID: $IMS_CLIENT_ID
+              IMS_CLIENT_SECRET: $IMS_CLIENT_SECRET
+              IMS_ORG_ID: $IMS_ORG_ID
+              IMS_AUTH_HOST: $IMS_AUTH_HOST
+            annotations:
+              require-adobe-auth: false
+              final: true
+              code-download: false
+          sync-validate:
+            function: actions/sync-validate/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              COMMERCE_BASE_URL: $COMMERCE_BASE_URL
+              COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+              IMS_CLIENT_ID: $IMS_CLIENT_ID
+              IMS_CLIENT_SECRET: $IMS_CLIENT_SECRET
+              IMS_ORG_ID: $IMS_ORG_ID
+              IMS_AUTH_HOST: $IMS_AUTH_HOST
+            annotations:
+              require-adobe-auth: false
+              final: true
+              code-download: false
+          sync-start:
+            function: actions/sync-start/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            limits:
+              timeout: 3600000
+              memory: 512
+            inputs:
+              LOG_LEVEL: debug
+              COMMERCE_BASE_URL: $COMMERCE_BASE_URL
+              COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+              IMS_CLIENT_ID: $IMS_CLIENT_ID
+              IMS_CLIENT_SECRET: $IMS_CLIENT_SECRET
+              IMS_ORG_ID: $IMS_ORG_ID
+              IMS_AUTH_HOST: $IMS_AUTH_HOST
+            annotations:
+              require-adobe-auth: false
+              final: true
+              code-download: false
+          sync-status:
+            function: actions/sync-status/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: debug
+              COMMERCE_BASE_URL: $COMMERCE_BASE_URL
+              COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+              IMS_CLIENT_ID: $IMS_CLIENT_ID
+              IMS_CLIENT_SECRET: $IMS_CLIENT_SECRET
+              IMS_ORG_ID: $IMS_ORG_ID
+              IMS_AUTH_HOST: $IMS_AUTH_HOST
+            annotations:
+              require-adobe-auth: false
+              final: true
+              code-download: false
+          sync-chunk:
+            function: actions/sync-chunk/index.js
+            web: 'yes'
+            runtime: nodejs:22
+            limits:
+              timeout: 60000
+              memory: 512
+            inputs:
+              LOG_LEVEL: debug
+              COMMERCE_BASE_URL: $COMMERCE_BASE_URL
+              COMMERCE_ACCESS_TOKEN: $COMMERCE_ACCESS_TOKEN
+              IMS_CLIENT_ID: $IMS_CLIENT_ID
+              IMS_CLIENT_SECRET: $IMS_CLIENT_SECRET
+              IMS_ORG_ID: $IMS_ORG_ID
+              IMS_AUTH_HOST: $IMS_AUTH_HOST
+            annotations:
+              require-adobe-auth: false
+              final: true
+              code-download: false
+productDependencies:
+  - code: COMMC
+    minVersion: 2.4.5
+    maxVersion: 3.0.0
+
+extensions:
+  commerce/configuration/1:
+    $include: src/commerce-configuration-1/ext.config.yaml
+  commerce/extensibility/1:
+    $include: src/commerce-extensibility-1/ext.config.yaml
